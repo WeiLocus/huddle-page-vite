@@ -1,14 +1,19 @@
 import {StyledHeader, Nav, Logo, Image } from './styles/Header.styled'
 import { Container } from './styles/Container.styled'
-import { Button } from './styles/Button.styled'
+import { Button, ButtonTheme, GridButton } from './styles/Button.styled'
 import { Flex } from './styles/Flex.styled'
-export default function Header () {
+import { FaToggleOn } from 'react-icons/fa'
+export default function Header ({onClick}) {
   return (
     <StyledHeader>
       <Container>
         <Nav>
           <Logo src='./images/logo.svg' alt=''/>
-          <Button>Try It free</Button>
+          <GridButton>
+            <Button >Try It free</Button>
+            <ButtonTheme onClick={onClick} bg='#add8e6'><FaToggleOn/>
+            </ButtonTheme>
+          </GridButton>
         </Nav>
         <Flex>
           <div>
@@ -18,7 +23,8 @@ export default function Header () {
               but so does your audience. Create connections with your users as
               you engage in genuine discussion.
             </p>
-            <Button bg='#ff0099' color='#fff'>
+            <Button 
+              bg='#ff0099' color='#fff'>
               Get Started For Free
             </Button>
           </div>

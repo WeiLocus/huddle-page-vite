@@ -1,11 +1,11 @@
-import { Container  } from "./styles/Container.styled"
+import { Container, FooterContainer  } from "./styles/Container.styled"
 import { Flex } from "./styles/Flex.styled"
 import styled from "styled-components"
 import SocialIcons from "./SocialIcons"
 
 const StyledFooter = styled.footer`
-background-color: ${ ({theme}) => theme.colors.footer};
-color: #fff;
+background-color: ${ ({theme}) => theme.footerBgColor};
+color: ${ ({theme}) => theme.footerColor};
 padding: 100px 0 60px;
 
 ul {
@@ -21,7 +21,7 @@ p {
 }
 
 /* media */
-@media (max-width: ${({theme}) => theme.mobile}) {
+@media (max-width: ${(size) => size.mobile}) {
   text-align: center;
   ul {
     padding: 0;
@@ -35,7 +35,7 @@ p {
 export default function Footer () {
   return (
     <StyledFooter>
-      <Container>
+      <FooterContainer>
       <img src='./images/logo_white.svg' alt=''/>
       <Flex>
         <ul>
@@ -60,7 +60,7 @@ export default function Footer () {
           <SocialIcons />
       </Flex>
       <p>&copy; 2021 Huddle. All rights reserved</p>
-      </Container>
+      </FooterContainer>
     </StyledFooter>
   )
 }

@@ -7,8 +7,8 @@ const GlobalStyles = createGlobalStyle`
     }
     body {
       /* 透過變數指定 */
-      background: ${({ theme }) => theme.colors.body};
-      color: hsl(192, 100%, 9%);
+      background: ${({ theme }) => theme.bodyColor};
+      /* color: hsl(192, 100%, 9%); */
       font-family: 'Poppins', sans-serif;
       font-size: 1.15em;
       margin: 0;
@@ -19,7 +19,29 @@ const GlobalStyles = createGlobalStyle`
     }
     img {
       max-width: 100%;
-  }
+    }
 `
+export const  lightTheme = {
+  theme: 'light',
+  headerColor: '#ebfbff',
+  headerBgColor: '#ebfbff',
+  bodyColor: '#fff',
+  bodyBgColor: '#ebfbff',
+  textColor: 'hsl(192, 100%, 9%)',
+  footerColor: '#fff',
+  footerBgColor: '#216565',
+  cardColor: '#fff',
+}
 
+export const  darkTheme = {
+  theme: 'dark',
+  headerColor: '#333',
+  headerBgColor: '#333',
+  bodyColor: '#333',
+  bodyBgColor: '#333',
+  textColor: 'hsl(0, 0%, 96%)',
+  footerColor: 'hsl(0, 0%, 60%)',
+  footerBgColor: '#333',
+  cardColor: 'hsl(0, 0%, 41%)',
+}
 export default GlobalStyles
